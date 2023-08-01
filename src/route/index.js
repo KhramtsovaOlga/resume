@@ -5,6 +5,36 @@ const router = express.Router()
 
 // ================================================================
 
+var header = {
+  name: {
+    firstname: 'Ivan',
+    lastname: 'Ivanov',
+  },
+  position: 'Junior Fullstack JS Developer',
+  salary: '600$ в місяць',
+  address: 'Україна, Київ, проспект Бандери',
+}
+
+var footer = {
+  social: {
+    email: {
+      text: 'dmytro@mail.com',
+      href: 'mailto:dmytro@mail.com',
+    },
+
+    phone: {
+      text: '+380670000123',
+      href: 'tel:+380670000123',
+    },
+
+    linkedin: {
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dmytro-test',
+    },
+  },
+}
+// ================================================================
+
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -23,10 +53,214 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Summary',
+    },
+
+    header,
+
+    main: {
+      summary: {
+        title: 'Summary',
+        text: `Open-minded for new technologies, with 1 years of
+        experience in development. Whenever I start to
+        work on a new project I learn the domain and try
+        to understand the idea of the project. Good team
+        player, every colleague is a friend to me.`,
+      },
+
+      experience: {
+        title: 'Other experience',
+        text: `  Pet project for parsing sport betting data from
+        different platforms ( odds ) and sport statistics
+        ( tournament position, goals etc), analyzing by
+        simple mathematics models and preparing
+        probability for such events like: money line -
+        first win / draw / second win, totals etc.`,
+      },
+    },
+
+    footer,
   })
 })
 
-// ================================================================
+router.get('/skills', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('skills', {
+    // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Skills',
+    },
+
+    header,
+
+    main: {
+      skills: [
+        {
+          name: 'HTML',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'Git',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'Terminal',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'VS Code',
+          point: 9,
+          isTop: false,
+        },
+
+        {
+          name: 'Handlebars',
+          point: 9,
+        },
+        {
+          name: 'React.js',
+          point: 0,
+        },
+        {
+          name: 'php',
+          point: null,
+        },
+      ],
+      hobbies: [
+        {
+          name: 'Вокал',
+          isMain: true,
+        },
+        {
+          name: 'Плавання',
+          isMain: true,
+        },
+        {
+          name: 'Кіно',
+          isMain: false,
+        },
+      ],
+    },
+
+    footer,
+  })
+}) // ================================================================
+
+router.get('/education', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('education', {
+    // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Education',
+    },
+
+    header,
+
+    main: {
+      educations: [
+        {
+          name: 'kindergarden',
+          isEnd: true,
+        },
+        {
+          name: 'school',
+          isEnd: true,
+        },
+        {
+          name: 'university',
+          isEnd: false,
+        },
+        {
+          name: 'it-brains',
+          isEnd: false,
+        },
+      ],
+
+      certificates: [
+        {
+          name: 'Сертифікат школа',
+          id: 123,
+        },
+        {
+          name: 'Сертифікат універ',
+          id: 456,
+        },
+        {
+          name: 'Сертифікат курси',
+          id: 789,
+        },
+      ],
+    },
+
+    footer,
+  })
+})
+
+router.get('/work', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('work', {
+    // ↙ сюди вводимо JSON дані
+
+    layout: 'big',
+
+    page: {
+      title: 'Resume | Work',
+    },
+
+    header,
+
+    main: {
+      works: [
+        {
+          position: 'Junior Fullstack Developer',
+          company: {
+            name: 'IT Brains',
+            url: null,
+          },
+          duration: {
+            from: '23.07.2021',
+            to: null,
+          },
+          projectAmount: 3,
+          projects: [
+            {
+              name: 'Resume',
+              url: 'https://resume.com.ua/',
+              about: 'About',
+              stackAmount: 3,
+              stacks: [
+                {
+                  name: 'React.js',
+                },
+                {
+                  name: 'HTML/CSS',
+                },
+                {
+                  name: 'smth else',
+                },
+              ],
+              awardsAmount: 2,
+              awards: [
+                {
+                  name: 'Нагорода що я молодець',
+                },
+                {
+                  name: 'Почесна грамота',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    footer,
+  })
+})
 
 // Підключаємо роутер до бек-енду
 module.exports = router
