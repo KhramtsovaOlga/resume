@@ -1,0 +1,100 @@
+<div>
+
+  <h1>{{name}}</h1>
+  <p><em><b>General Information:</b></em></p>
+  <ul>
+    <li>
+      Date & birthplace:
+      {{birthdate}},
+      {{birthplace}}</li>
+    <li>
+      Date & deathplace:
+      {{deathdate}},
+      {{deathplace}}</li>
+    <li>Nationality: {{nationality}}</li>
+    <li>Occupation: {{occupation}}</li>
+  </ul>
+  <hr />
+  <p><em><b>Known for:</b></em></p>
+  <ul>
+    {{#each known_for}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <hr />
+  <p><em><b>Education:</b></em></p>
+  <ul>
+    {{#each education}}
+      <li>{{degree}} in {{field}}</li>
+      <li>Institution {{institution}} study in {{year}}</li>
+    {{/each}}
+  </ul>
+  <p><em><b>Notable publications:</b></em></p>
+  <ol>
+    {{#each notable_publications}}
+      <li>"{{title}}" {{year}} {{publisher}}</li>
+    {{/each}}
+  </ol>
+  <p><em><b>Partners:</b></em></p>
+  <ul>
+    {{#each partners}}
+      <li>{{name}}, relationship:
+        {{relationship}},
+        {{years}}</li>
+    {{/each}}
+  </ul>
+  <br />
+  <hr />
+  <p><em><b>AWARDS:</b></em></p>
+  {{#each awards}}
+    <p>
+      Title:
+      {{title}}, year:
+      {{year}},
+      {{description}}</p>
+  {{/each}}
+  <br />
+  <hr />
+  <p><em><b>Influences:</b></em></p>
+  <ul>
+    {{#each influences}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <p><em><b>Influenced:</b></em></p>
+  <ul>
+    {{#each influenced}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <br />
+  <hr />
+  <p><em><b>Famous quotes:</b></em></p>
+  <ul>
+    {{#each quotes}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <br />
+  <hr />
+  <p><em><b>Major discoveries:</b></em></p>
+  {{#each major_discoveries}}
+    <p>"{{title}}",
+      {{year}},
+      <b>description:</b>
+      {{description}}</p>
+  {{/each}}
+  <br />
+  <hr />
+  <p><em><b> Contributions:</b></em></p>
+  {{#with contributions}}
+    <p>"{{title}}",
+      <b>description:</b>
+      {{description}}
+      years:
+      {{year}},
+      <b>field:</b>
+      {{field}}</p>
+  {{/with}}
+
+</div>
