@@ -1,0 +1,82 @@
+<div>
+  <h1>Program</h1>
+  {{#with program}}
+    {{#with excursion}}
+      <h2> Excurcion: "{{name}}"</h2>
+      <ul>
+        <li>Location:
+          {{#with location}}
+            {{city}},
+            {{country}}
+          {{/with}}</li>
+        <li> Date: {{date}}</li>
+      </ul>
+
+      <hr />
+      <ol>
+        {{#each program}}
+          <li><b>{{name}}</b></li>
+          <ul>
+            <li>{{type}}</li>
+            <li>{{duration}} hours</li>
+            {{#with details}}
+              <li>
+                {{#with museum}}
+                  {{name}}
+                  {{#with location}}
+                    ({{address}},
+                    {{city}},
+                    {{country}})
+                  {{/with}}
+                {{/with}}
+
+                {{#with venue}}
+                  {{name}}
+                  {{#with location}}
+                    ({{address}},
+                    {{city}},
+                    {{country}})
+                  {{/with}}
+                {{/with}}
+
+              </li>
+              <li>
+                {{#if exhibits}} Exhibits:
+                {{else}} Performers: 
+                {{/if}}
+                <ul>
+                  {{#each museum.exhibits}}
+                  
+                    <li>
+                      {{name}},
+                      {{artist}},
+                      {{description}},
+                      {{#if audio_guide}}
+                        (there is an audio guide)
+                      {{/if}}
+                      {{/each}} 
+                      
+                      {{#each details.perfomers}}  
+                      {{name}}, {{type}}   
+                      {{/each}}
+                     </li>
+                </ul>
+
+              </li>
+
+              <li>
+                {{#with guide}}
+                  {{name}},
+                  {{language}},
+                  {{rating}}
+                {{/with}}
+              </li>
+
+            {{/with}}
+          </ul>
+        {{/each}}
+
+      </ol>
+    {{/with}}
+  {{/with}}
+</div>
