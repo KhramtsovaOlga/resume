@@ -13,9 +13,11 @@
       </ul>
 
       <hr />
+      <br>
       <ol>
         {{#each program}}
           <li><b>{{name}}</b></li>
+          <hr>
           <ul>
             <li>{{type}}</li>
             <li>{{duration}} hours</li>
@@ -28,7 +30,20 @@
                     {{city}},
                     {{country}})
                   {{/with}}
-                {{/with}}
+                <ul>
+                  {{#each exhibits}}
+                    <li>
+                      {{name}},
+                      {{artist}},
+                      {{description}},
+                      {{#if audio_guide}}
+                        (there is an audio guide)
+                      {{/if}}
+                    </li>
+                  {{/each}} 
+                </ul>    
+              </li>
+              {{/with}}
 
                 {{#with venue}}
                   {{name}}
@@ -37,33 +52,11 @@
                     {{city}},
                     {{country}})
                   {{/with}}
-                {{/with}}
-
-              </li>
-              <li>
-                {{#if exhibits}} Exhibits:
-                {{else}} Performers: 
-                {{/if}}
-                <ul>
-                  {{#each museum.exhibits}}
+                {{/with}}  
+                  {{#each performers}}  
+                  {{name}}, {{type}}   
+                  {{/each}}
                   
-                    <li>
-                      {{name}},
-                      {{artist}},
-                      {{description}},
-                      {{#if audio_guide}}
-                        (there is an audio guide)
-                      {{/if}}
-                      {{/each}} 
-                      
-                      {{#each details.perfomers}}  
-                      {{name}}, {{type}}   
-                      {{/each}}
-                     </li>
-                </ul>
-
-              </li>
-
               <li>
                 {{#with guide}}
                   {{name}},
@@ -71,11 +64,11 @@
                   {{rating}}
                 {{/with}}
               </li>
-
+            <br>
+            <br>
             {{/with}}
           </ul>
         {{/each}}
-
       </ol>
     {{/with}}
   {{/with}}
