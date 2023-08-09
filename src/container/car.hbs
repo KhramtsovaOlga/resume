@@ -1,0 +1,238 @@
+<div>
+  <h1>{{make}}
+    {{model}}<span
+      class='badge bg-secondary'
+    >New</span></h1>
+  <h2><em>Year -{{year}}, color - {{color}}</em></h2>
+  <hr />
+  {{#with features}}
+    {{#with interior}}
+      {{#with seats}}
+        <nav aria-label='breadcrumb'>
+          <ol class='breadcrumb'>
+            <li class='breadcrumb-item'><a
+                href='#'
+              >Features</a></li>
+            <li class='breadcrumb-item'><a
+                href='#'
+              >Interior</a></li>
+            <li
+              class='breadcrumb-item active'
+              aria-current='page'
+            >Seats</li>
+          </ol>
+        </nav>
+        <ul>
+          <li>Material: {{material}}</li>
+          <li>Color: {{color}}</li>
+          <li>Heated:{{#if true}} +{{/if}}</li>
+          <li>Ventilated:{{#if true}} +{{/if}}</li>
+        </ul>
+      {{/with}}
+      <nav aria-label='breadcrumb'>
+        <ol class='breadcrumb'>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Features</a></li>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Interior</a></li>
+          <li
+            class='breadcrumb-item active'
+            aria-current='page'
+          >Dashboard</li>
+        </ol>
+      </nav>
+      {{#with dashboard}}
+        <ul>
+          <li>Material: {{material}}</li>
+          <li>Color: {{color}}</li>
+          {{#with display}}
+            <li>Display:
+              {{type}},
+              {{size}},
+              {{resolution}},
+              {{#if true}}touchscreen{{/if}}</li>
+          {{/with}}
+        </ul>
+      {{/with}}
+      <nav aria-label='breadcrumb'>
+        <ol class='breadcrumb'>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Features</a></li>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Interior</a></li>
+          <li
+            class='breadcrumb-item active'
+            aria-current='page'
+          >Audio</li>
+        </ol>
+      </nav>
+      {{#with audio}}
+        <ul>
+          <li>System: {{system}}</li>
+          <li>Speakers: {{speakers}}</li>
+          <li>Subwoofer: {{#if true}}+{{/if}}</li>
+          <li>Bluetooth: {{#if true}}+{{/if}}</li>
+          <li>USB: {{#if true}}+{{/if}}</li>
+        </ul>
+      {{/with}}
+    {{/with}}
+    {{#with exterior}}
+      <nav aria-label='breadcrumb'>
+        <ol class='breadcrumb'>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Features</a></li>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Exterior</a></li>
+          <li
+            class='breadcrumb-item active'
+            aria-current='page'
+          >Wheels</li>
+        </ol>
+      </nav>
+      {{#with wheels}}
+        <ul>
+          <li>Size: {{size}}</li>
+          <li>Type: {{type}}</li>
+          <li>Color: {{color}}</li>
+        </ul>
+      {{/with}}
+      <nav aria-label='breadcrumb'>
+        <ol class='breadcrumb'>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Features</a></li>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Exterior</a></li>
+          <li
+            class='breadcrumb-item active'
+            aria-current='page'
+          >Headlights</li>
+        </ol>
+      </nav>
+      {{#with headlights}}
+        <ul>
+          <li>Type: {{type}}</li>
+          <li>Brightness: {{brightness}}</li>
+          <li>Automatic: {{#if true}}+{{/if}}</li>
+        </ul>
+      {{/with}}
+      <nav aria-label='breadcrumb'>
+        <ol class='breadcrumb'>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Features</a></li>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Exterior</a></li>
+          <li
+            class='breadcrumb-item active'
+            aria-current='page'
+          >Sunroof</li>
+        </ol>
+      </nav>
+      {{#with sunroof}}
+        <ul>
+          <li>Type: {{type}}</li>
+          <li>Size: {{size}}</li>
+          <li>Automatic: {{#if true}}+{{/if}}</li>
+        </ul>
+      {{/with}}
+    {{/with}}
+    <nav aria-label='breadcrumb'>
+      <ol class='breadcrumb'>
+        <li class='breadcrumb-item'><a
+            href='#'
+          >Features</a></li>
+        <li class='breadcrumb-item'><a
+            href='#'
+          >Safety</a></li>
+        <li
+          class='breadcrumb-item active'
+          aria-current='page'
+        >Airbags</li>
+      </ol>
+    </nav>
+    {{#with safety}}
+      {{#with airbags}}
+        <ul>
+          <li>Front: {{front}}</li>
+          <li>Side: {{side}}</li>
+          <li>Knee: {{knee}}</li>
+          <li>Rear: {{rear}}</li>
+        </ul>
+      {{/with}}
+      <nav aria-label='breadcrumb'>
+        <ol class='breadcrumb'>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Features</a></li>
+          <li class='breadcrumb-item'><a
+              href='#'
+            >Safety</a></li>
+          <li
+            class='breadcrumb-item active'
+            aria-current='page'
+          >Assistanse</li>
+        </ol>
+      </nav>
+      {{#with assistance}}
+        <ul>
+          <li>Blind spot monitoring:
+            {{#if true}}+{{/if}}</li>
+            <li> Rear cross traffic alert:
+            {{#if true}}+{{/if}}</li>
+            <li>Lane departure warning:
+            {{#if true}}+{{/if}}</li>
+            <li>Adaptive cruise control:
+            {{#if true}}+{{/if}}</li>
+            <li>Collision warning:
+            {{#if true}}+{{/if}}</li>   
+      {{/with}}
+    {{/with}}
+  {{/with}}
+  <hr>
+    <span class="badge text-bg-secondary">ENGINE</span>
+     {{#with engine}}
+        <ul>
+          <li>Type: {{type}}</li>
+          <li>Displacement: {{displacement}}</li>
+          <li>Horsepower: {{horsepower}}</li>
+          <li>Torque {{torque}}</li>
+          <li>Transmission: {{#with transmission}} ({{type}}, {{gears}}) {{/with}}</li>
+        </ul>
+      {{/with}}
+  <hr>
+    <span class="badge text-bg-success">FUEL ECONOMY</span>
+      {{#with fuel_economy}}
+        <ul>
+          <li>City - {{city}}</li>
+          <li>Highway - {{highway}}</li>
+          <li>Combined - {{combined}}</li>
+        </ul>
+      {{/with}}
+  <div class="alert alert-success d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:" ><use xlink:href="#check-circle-fill"/></svg>
+    <div>
+      PRICE
+    </div>
+  </div>
+  {{#with price}}
+    <ul class="list-group">
+          <li class="list-group-item">Base - {{base}}</li>
+          <li class="list-group-item">Destination - {{destination}}</li>
+          <li class="list-group-item"><b>Options</b>{{#with options}} <li class="list-group-item">Navigation - {{navigation}}</li>
+          <li class="list-group-item">Moonroof - {{moonroof}}</li>
+          <li class="list-group-item">Premium paint - {{premium_paint}}</li>
+            {{/with}}</li>
+          <li class="list-group-item"><b>Total - {{total}}</b></li> 
+        </ul>
+  {{/with}}
+
+</div>
