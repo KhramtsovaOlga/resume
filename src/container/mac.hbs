@@ -1,0 +1,124 @@
+<div>
+  <h1>Apple MacBook<span
+      class='badge bg-secondary'
+    >PRO</span></h1>
+  <h2><em>{{description}}</em></h2>
+  <div><button
+      type='button'
+      class='btn btn-primary btn-lg'
+    >Price
+      {{price}}</button></div>
+  <hr />
+  <p>Category: {{category}}</p>
+  {{#with features}}
+    {{#with processor}}
+      <ul>
+        <span class='badge text-bg-success'>Processor</span>
+        <li>{{brand}}</li>
+        <li>{{model}}</li>
+        <li>{{speed}}</li>
+        <li>{{cores}}</li>
+        <li>{{cache}}</li>
+      </ul>
+    {{/with}}
+    {{#with memory}}
+      <ul>
+        <span class='badge text-bg-warning'>Memory</span>
+        <li>Type: {{type}}</li>
+        <li>Size: {{size}}</li>
+        <li>Speed: {{speed}}</li>
+      </ul>
+    {{/with}}
+    {{#with storage}}
+      <ul>
+        <span class='badge text-bg-info'>Storage</span>
+        <li>Type: {{type}}</li>
+        <li>Size: {{size}}</li>
+      </ul>
+    {{/with}}
+    {{#with display}}
+      <ul>
+        <span class='badge text-bg-secondary'>Display</span>
+        <li>Size: {{size}}</li>
+        <li>Resolution: {{resolution}}</li>
+        <li>Technology: {{technology}}</li>
+        <li>Color space: {{color_space}}</li>
+        <li>Brightness: {{brightness}}</li>
+        <li>Refresh_rate: {{refresh_rate}}</li>
+      </ul>
+    {{/with}}
+    {{#with graphics}}
+      <ul>
+        <span class='badge text-bg-dark'>Graphics</span>
+        <li>Brand: {{brand}}</li>
+        <li>Model: {{model}}</li>
+        <li>Memory: {{memory}}</li>
+      </ul>
+    {{/with}}
+    {{#each ports}}
+      <ul>
+        <span class='badge text-bg-secondary'>Ports</span>
+        <li>Type: {{type}}</li>
+        <li>Count: {{count}}</li>
+        {{#if features}}<li>Features:</li>{{/if}}
+        <ul>
+          {{#each features}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </ul>
+    {{/each}}
+    {{#with battery}}
+      <ul>
+        <span class='badge text-bg-success'>Battery</span>
+        <li>Type: {{type}}</li>
+        <li>Capacity: {{capacity}}</li>
+        <li>Life: {{life}}</li>
+      </ul>
+    {{/with}}
+
+    <p><u><b>Weight: {{weight}}</b></u></p>
+
+    {{#with dimensions}}
+      <ul>
+        <div
+          class='btn-group'
+          role='group'
+          aria-label='Basic mixed styles example'
+        >
+          <button
+            type='button'
+            class='btn btn-danger'
+          >Height {{height}}</button>
+          <button
+            type='button'
+            class='btn btn-warning'
+          >Width {{width}}</button>
+          <button
+            type='button'
+            class='btn btn-success'
+          >Depth {{depth}}</button>
+        </div>
+      </ul>
+    {{/with}}
+    <p><u><b>Operating system:
+          {{operating_system}}</b></u></p>
+    {{#each accessories}}
+      <table class='table'>
+        <thead>
+          <tr>
+            <th>accessories</th>
+            <th>price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+          </tr>
+        </tbody>
+      </table>
+    {{/each}}
+
+  {{/with}}
+</div>
