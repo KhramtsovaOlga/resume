@@ -1,0 +1,61 @@
+<div>
+  <h1>{{name}}</h1>
+  <hr />
+  {{#each users}}
+    <ul>
+      <span class='badge text-bg-success'>Users</span>
+      <li>{{id}}. {{name}}, ({{gender}}, {{age}})</li>
+      <ul>
+        {{#each friends}}
+          <span class='badge text-bg-warning'>Friends</span>
+          <li>{{id}}. {{name}}, ({{gender}}, {{age}})</li>
+
+          <ul>
+            {{#each mutual_friends}}
+              <span class='badge text-bg-info'>Mutual
+                friends</span>
+              <li>{{id}}.
+                {{name}}, ({{gender}},
+                {{age}})</li>
+            {{/each}}
+          </ul>
+
+          {{#each groups}}
+          <ul>
+            <span class='badge text-bg-danger'>Groups</span>
+            <li>{{id}}. "{{name}}" - {{description}}</li>
+            {{#each members}}
+             <ul>
+            <span
+              class='badge text-bg-secondary'
+            >Members</span>
+            <li>{{id}}.
+              {{name}}
+              ({{gender}},
+              {{age}})</li>
+            </ul>
+            {{/each}}
+        </ul>
+        {{/each}}
+      {{/each}}
+    </ul>
+
+    {{#each groups}}
+      <ul>
+        <span class='badge text-bg-danger'>Groups</span>
+        <li>{{id}}. "{{name}}" - {{description}}</li>
+        {{#each members}}
+          <ul>
+            <span
+              class='badge text-bg-secondary'
+            >Members</span>
+            <li>{{id}}.
+              {{name}}
+              ({{gender}},
+              {{age}})</li>
+          </ul>
+        {{/each}}
+      </ul>
+    {{/each}}
+  {{/each}}
+</div>
