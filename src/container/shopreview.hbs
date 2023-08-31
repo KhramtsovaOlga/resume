@@ -118,4 +118,17 @@
   
 </main>
 
-cccc
+ <footer>
+    <div class='nav'>
+    {{#each footer}}
+      <div class='nav-item col-2'>
+        {{#each this}}
+          <a
+            class='nav-link mx-5'
+            href='{{link}}'
+          >{{text}}</a>
+        {{/each}}
+      </div>
+    {{/each}}
+    </div>
+  </footer>
